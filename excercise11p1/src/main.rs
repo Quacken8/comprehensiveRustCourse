@@ -58,14 +58,14 @@ impl Library {
         }
 
         // this approach ignores multiple oldest books
-        let mut oldestBook: &Book = &self.books[0];
+        let mut oldest_book: &Book = &self.books[0];
 
         for book in &self.books {
-            if book.year < oldestBook.year {
-                oldestBook = book
+            if book.year < oldest_book.year {
+                oldest_book = book
             }
         }
-        return Some(&oldestBook)
+        return Some(&oldest_book)
     }
 }
 
