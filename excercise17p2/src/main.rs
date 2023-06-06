@@ -100,7 +100,6 @@ pub enum Shape {
 
 impl Shape {
        
-
     fn perimeter(&self) -> f64 {
         match self {
             Shape::Circle(circle) => return 2.0 * PI * (circle.radius as f64),
@@ -120,6 +119,17 @@ impl Shape {
     }
 }
 
+impl From<Polygon> for Shape {
+    fn from(polygon: Polygon) -> Self {
+        Shape::Polygon(polygon)
+    }
+}
+
+impl From<Circle> for Shape {
+    fn from(circle: Circle) -> Self {
+        Shape::Circle(circle)
+    }
+}
 
 #[cfg(test)]
 mod tests {
