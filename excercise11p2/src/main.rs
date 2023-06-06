@@ -3,7 +3,7 @@ fn main() {
 
     for word in &v {
         let x:&String = word;
-        println!("word: {word}");
+        println!("word: {word}, {x}");
     }
 
     for word in v {
